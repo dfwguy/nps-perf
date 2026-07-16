@@ -1,0 +1,7 @@
+#########INFO: Check NVLINK status (Expected: 72 links are up)
+72
+pci.bus_id, fabric.state, fabric.status
+00000008:06:00.0, Completed, Success
+00000009:06:00.0, Completed, Success
+00000018:06:00.0, Completed, Success
+00000019:06:00.0, Completed, Success

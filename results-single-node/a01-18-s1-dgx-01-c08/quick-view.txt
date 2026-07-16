@@ -1,0 +1,5 @@
+hostname: DONE
+dcgm: DONE
+allreduce: DONE
+alltoall: DONE
+mnubergemm: DONE

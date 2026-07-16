@@ -1,0 +1,3 @@
+########INFO: Check Kernel Parm
+6.17.0-1008-nvidia-64k
+acpi_power_meter.force_map_on=y console=tty0 init_on_alloc=0 iommu.passthrough=1 nouveau.modeset=0 numa_balancing=disable pci=config_acs=xx111x0@0008:00:00.0;xx110x1@0008:02:00.0;xx101x1@0008:02:03.0;xx111x0@0009:00:00.0;xx110x1@0009:02:00.0;xx101x1@0009:02:01.0;xx111x0@0018:00:00.0;xx110x1@0018:02:00.0;xx101x1@0018:02:03.0;xx111x0@0019:00:00.0;xx110x1@0019:02:00.0;xx101x1@0019:02:01.0 rw

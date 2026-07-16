@@ -1,0 +1,4 @@
+ 12:35:46 up  1:32,  0 user,  load average: 0.23, 0.62, 0.61
+still alive!
+grep: /home/cmods/bringup/results/a01-28-s1-dgx-01-c09/hostname_1node.txt: No such file or directory
+DONE

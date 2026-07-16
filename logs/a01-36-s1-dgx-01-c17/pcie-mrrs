@@ -1,0 +1,2 @@
+########INFO: Check PCIe MRRS (Expected: all 4096, but on BXX/HXX some&lt;4&gt; with 512 is expected)
+     63 4096

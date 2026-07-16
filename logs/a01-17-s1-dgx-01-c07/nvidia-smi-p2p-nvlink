@@ -1,0 +1,5 @@
+#########INFO: Check P2P nvlink capability status (Expected: All GPU are OK on GBXX/BXX/HXX)
+ GPU0	X	OK	OK	OK	
+ GPU1	OK	X	OK	OK	
+ GPU2	OK	OK	X	OK	
+ GPU3	OK	OK	OK	X	

@@ -1,0 +1,55 @@
+Successfully ran diagnostic for group.
++---------------------------+------------------------------------------------+
+| Diagnostic                | Result                                         |
++===========================+================================================+
+|-----  Metadata  ----------+------------------------------------------------|
+| DCGM Version              | 4.5.2                                          |
+| Driver Version Detected   | 580.126.20                                     |
+| GPU Device IDs Detected   | 31c2, 31c2, 31c2, 31c2                         |
+| Number of CPUs Detected   | 2                                              |
+|-----  Deployment  --------+------------------------------------------------|
+| software                  | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
++-----  Hardware  ----------+------------------------------------------------+
+| memory                    | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+| diagnostic                | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+| nvbandwidth               | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
++-----  Integration  -------+------------------------------------------------+
+| pcie                      | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
++-----  Stress  ------------+------------------------------------------------+
+| memory_bandwidth          | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+| targeted_stress           | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+| targeted_power            | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
++---------------------------+------------------------------------------------+
+DONE

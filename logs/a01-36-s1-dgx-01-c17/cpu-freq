@@ -1,0 +1,4 @@
+########INFO: Check CPU Frequency (Expected: CPUs are in performance mode and frequency all above 1800 MHz)
+    144 performance
+0 freq PASS
+1 freq PASS

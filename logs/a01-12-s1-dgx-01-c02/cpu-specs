@@ -1,0 +1,16 @@
+########INFO: Check CPU
+Architecture:                            aarch64
+CPU op-mode(s):                          64-bit
+Byte Order:                              Little Endian
+CPU(s):                                  144
+On-line CPU(s) list:                     0-143
+Vendor ID:                               ARM
+BIOS Vendor ID:                          NVIDIA
+Model name:                              Neoverse-V2
+BIOS CPU family:                         258
+Model:                                   0
+Thread(s) per core:                      1
+Core(s) per socket:                      72
+Socket(s):                               2
+Stepping:                                r0p0
+Frequency boost:                         disabled

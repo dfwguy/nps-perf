@@ -1,0 +1,2 @@
+########INFO: Check IB Link Down status (Expected: No issue found)
+mlx5_0: [31mCable is unplugged[0m ,mlx5_1: [31mCable is unplugged[0m ,mlx5_2: [31mCable is unplugged[0m ,mlx5_3: [31mCable is unplugged[0m 

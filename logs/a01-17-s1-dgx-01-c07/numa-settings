@@ -1,0 +1,3 @@
+########INFO: Check NUMA_BALANCING and THP (Expected: NUMA_BALANCING=0 and THP=madvise)
+kernel.numa_balancing = 0
+always [madvise] never

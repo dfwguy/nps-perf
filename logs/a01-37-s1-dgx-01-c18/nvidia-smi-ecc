@@ -1,0 +1,6 @@
+########INFO: Check GPU basic
+pci.bus_id, name, vbios_version, pstate, enforced.power.limit [W], ecc.errors.uncorrected.aggregate.total, remapped_rows.failure, remapped_rows.uncorrectable, remapped_rows.pending
+00000008:06:00.0, NVIDIA GB300, 97.10.4A.00.1F, P0, 1400.00 W, 0, No, 0, No
+00000009:06:00.0, NVIDIA GB300, 97.10.4A.00.1F, P0, 1400.00 W, 0, No, 0, No
+00000018:06:00.0, NVIDIA GB300, 97.10.4A.00.1F, P0, 1400.00 W, 0, No, 0, No
+00000019:06:00.0, NVIDIA GB300, 97.10.4A.00.1F, P0, 1400.00 W, 0, No, 0, No
