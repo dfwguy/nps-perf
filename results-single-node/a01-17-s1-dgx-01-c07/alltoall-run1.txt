@@ -1,0 +1,670 @@
+srun: warning: can't honor --ntasks-per-node set to 1 which doesn't match the requested tasks 4 with the maximum number of requested nodes 1. Ignoring --ntasks-per-node.
+# nccl-tests version 2.17.8 nccl-headers=22902 nccl-library=22902
+# Collective test starting: alltoall_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 1 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 131321 on a01-17-s1-dgx-01-c07 device  0 [0008:06:00] NVIDIA GB300
+#  Rank  1 Group  0 Pid 131322 on a01-17-s1-dgx-01-c07 device  1 [0009:06:00] NVIDIA GB300
+#  Rank  2 Group  0 Pid 131323 on a01-17-s1-dgx-01-c07 device  2 [0018:06:00] NVIDIA GB300
+#  Rank  3 Group  0 Pid 131324 on a01-17-s1-dgx-01-c07 device  3 [0019:06:00] NVIDIA GB300
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO ENV/Plugin: Could not find: libnccl-env.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Bootstrap: Using enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO cudaDriverVersion 13010
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL version 2.29.2+cuda13.1
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL git version stable 07fa371c7
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO ENV/Plugin: Could not find: libnccl-env.so
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO ENV/Plugin: Could not find: libnccl-env.so
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO ENV/Plugin: Could not find: libnccl-env.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Comm config nvlinkCentricSched set to 1
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO cudaDriverVersion 13010
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO cudaDriverVersion 13010
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO cudaDriverVersion 13010
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Bootstrap: Using enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL version 2.29.2+cuda13.1
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL git version stable 07fa371c7
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Bootstrap: Using enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL version 2.29.2+cuda13.1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL git version stable 07fa371c7
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Bootstrap: Using enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL version 2.29.2+cuda13.1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL git version stable 07fa371c7
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Comm config nvlinkCentricSched set to 1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Comm config nvlinkCentricSched set to 1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Comm config nvlinkCentricSched set to 1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/Plugin: Loaded net plugin NCCL RDMA Plugin v11 (v11)
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/Plugin: Loaded collnet plugin SHARP (v11)
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Successfully loaded external network plugin /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO P2P plugin v11 IBext_v11
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Failed to initialize NET plugin IBext_v11
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Failed to initialize NET plugin IB
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NET/Socket : Using [0]enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Initialized NET plugin Socket
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Assigned NET plugin Socket to comm
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Using network Socket
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO [Rank 2] ncclCommInitRankConfig comm 0xaaaaac5281a0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 1806000 commId 0xa5d22d250ce7fbc1 - Init START
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/Plugin: Loaded net plugin NCCL RDMA Plugin v11 (v11)
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/Plugin: Loaded collnet plugin SHARP (v11)
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Successfully loaded external network plugin /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO P2P plugin v11 IBext_v11
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Failed to initialize NET plugin IBext_v11
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Failed to initialize NET plugin IB
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NET/Socket : Using [0]enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Initialized NET plugin Socket
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Assigned NET plugin Socket to comm
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Using network Socket
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO [Rank 3] ncclCommInitRankConfig comm 0xaaaaac528070 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 1906000 commId 0xa5d22d250ce7fbc1 - Init START
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/Plugin: Loaded net plugin NCCL RDMA Plugin v11 (v11)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/Plugin: Loaded collnet plugin SHARP (v11)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Successfully loaded external network plugin /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO P2P plugin v11 IBext_v11
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Failed to initialize NET plugin IBext_v11
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Failed to initialize NET plugin IB
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NET/Socket : Using [0]enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Initialized NET plugin Socket
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Assigned NET plugin Socket to comm
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Using network Socket
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO [Rank 1] ncclCommInitRankConfig comm 0xaaaaac521c90 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 906000 commId 0xa5d22d250ce7fbc1 - Init START
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/Plugin: Loaded net plugin NCCL RDMA Plugin v11 (v11)
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/Plugin: Loaded collnet plugin SHARP (v11)
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Successfully loaded external network plugin /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO P2P plugin v11 IBext_v11
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Failed to initialize NET plugin IBext_v11
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/IB : No device found.
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/IB : Using [RO]; OOB enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Failed to initialize NET plugin IB
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to enP22p3s0f0np0
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NET/Socket : Using [0]enP22p3s0f0np0:10.0.250.17<0>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Initialized NET plugin Socket
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Assigned NET plugin Socket to comm
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Using network Socket
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO [Rank 0] ncclCommInitRankConfig comm 0xaaaaac52fa30 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 806000 commId 0xa5d22d250ce7fbc1 - Init START
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Bootstrap timings total 0.001764 (create 0.000034, send 0.000118, recv 0.000116, ring 0.000091, delay 0.000001)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Bootstrap timings total 0.066496 (create 0.000048, send 0.000109, recv 0.000116, ring 0.001154, delay 0.000001)
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Bootstrap timings total 0.114254 (create 0.000051, send 0.000124, recv 0.113719, ring 0.000065, delay 0.000001)
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Bootstrap timings total 0.404756 (create 0.000055, send 0.000120, recv 0.290636, ring 0.065460, delay 0.000001)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO MNNVL busId 0x906000 fabric UUID 8497fc5ef2d204c.665273786294e0b1 cliqueId 0x7ffe state 3 healthMask 0x1aa
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO MNNVL busId 0x1906000 fabric UUID 8497fc5ef2d204c.665273786294e0b1 cliqueId 0x7ffe state 3 healthMask 0x1aa
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO MNNVL busId 0x806000 fabric UUID 8497fc5ef2d204c.665273786294e0b1 cliqueId 0x7ffe state 3 healthMask 0x1aa
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO MNNVL busId 0x1806000 fabric UUID 8497fc5ef2d204c.665273786294e0b1 cliqueId 0x7ffe state 3 healthMask 0x1aa
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_MNNVL_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_MNNVL_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_MNNVL_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_P2P_LEVEL set by environment to NVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_MNNVL_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO MNNVL 1 cliqueId 7ffe cliqueSize 4 cliqueRank 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO MNNVL 1 cliqueId 7ffe cliqueSize 4 cliqueRank 0
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO MNNVL 1 cliqueId 7ffe cliqueSize 4 cliqueRank 2
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO MNNVL 1 cliqueId 7ffe cliqueSize 4 cliqueRank 1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO ncclTopoGetCpuAffinity: Affinity for GPU 3 is 72-143. (GPU affinity = 72-143 ; CPU affinity = 0-143).
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NCCL_NVLS_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 24)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO ncclTopoGetCpuAffinity: Affinity for GPU 1 is 0-71. (GPU affinity = 0-71 ; CPU affinity = 0-143).
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NCCL_NVLS_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 24)
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO ncclTopoGetCpuAffinity: Affinity for GPU 0 is 0-71. (GPU affinity = 0-71 ; CPU affinity = 0-143).
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NCCL_NVLS_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 24)
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO ncclTopoGetCpuAffinity: Affinity for GPU 2 is 72-143. (GPU affinity = 72-143 ; CPU affinity = 0-143).
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NCCL_NVLS_ENABLE set by environment to 1.
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 24)
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO comm 0xaaaaac52fa30 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 1
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO comm 0xaaaaac521c90 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO comm 0xaaaaac5281a0 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO comm 0xaaaaac528070 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 1
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 00/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 01/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 02/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 03/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 04/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 05/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 06/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 07/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 08/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->-1 [11] 2/-1/-1->1->-1 [12] -1/-1/-1->1->0 [13] -1/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->0 [18] 2/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 2/-1/-1->1->0 [23] 2/-1/-1->1->0 [24] 2/-1/-1->1->0 [25] 2/-1/-1->1->0 [26] 2/-1/-1->1->-1 [27] 2/-1/-1->1->-1 [28] -1/-1/-1->1->0 [29] -1/-1/-1->1->0 [30] 2/-1/-1->1->0 [31] 2/-1/-1->1->0
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO P2P Chunksize set to 524288
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 09/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 10/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 11/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 12/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 13/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 14/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 15/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 16/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 17/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 18/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 19/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 20/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 21/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 22/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 23/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 24/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 25/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 26/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 27/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 28/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 29/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 30/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 31/32 : 0 1 2 3
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->-1 [13] 3/-1/-1->2->-1 [14] -1/-1/-1->2->1 [15] -1/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->1 [19] 3/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->1 [23] 3/-1/-1->2->1 [24] 3/-1/-1->2->1 [25] 3/-1/-1->2->1 [26] 3/-1/-1->2->1 [27] 3/-1/-1->2->1 [28] 3/-1/-1->2->-1 [29] 3/-1/-1->2->-1 [30] -1/-1/-1->2->1 [31] -1/-1/-1->2->1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO P2P Chunksize set to 524288
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] 0/-1/-1->3->2 [11] 0/-1/-1->3->2 [12] 0/-1/-1->3->2 [13] 0/-1/-1->3->2 [14] 0/-1/-1->3->-1 [15] 0/-1/-1->3->-1 [16] -1/-1/-1->3->2 [17] -1/-1/-1->3->2 [18] -1/-1/-1->3->2 [19] -1/-1/-1->3->2 [20] -1/-1/-1->3->2 [21] -1/-1/-1->3->2 [22] -1/-1/-1->3->2 [23] -1/-1/-1->3->2 [24] -1/-1/-1->3->2 [25] -1/-1/-1->3->2 [26] 0/-1/-1->3->2 [27] 0/-1/-1->3->2 [28] 0/-1/-1->3->2 [29] 0/-1/-1->3->2 [30] 0/-1/-1->3->-1 [31] 0/-1/-1->3->-1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO P2P Chunksize set to 524288
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] -1/-1/-1->0->3 [11] -1/-1/-1->0->3 [12] 1/-1/-1->0->3 [13] 1/-1/-1->0->3 [14] 1/-1/-1->0->3 [15] 1/-1/-1->0->3 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] 1/-1/-1->0->-1 [19] 1/-1/-1->0->-1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 1/-1/-1->0->-1 [23] 1/-1/-1->0->-1 [24] 1/-1/-1->0->-1 [25] 1/-1/-1->0->-1 [26] -1/-1/-1->0->3 [27] -1/-1/-1->0->3 [28] 1/-1/-1->0->3 [29] 1/-1/-1->0->3 [30] 1/-1/-1->0->3 [31] 1/-1/-1->0->3
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO P2P Chunksize set to 524288
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0 isAllCudaP2p 1
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0 isAllCudaP2p 1
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0 isAllCudaP2p 1
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0 isAllCudaP2p 1
+a01-17-s1-dgx-01-c07:131321:132028 [0] NCCL INFO [Proxy Service] Device 0 CPU core 1
+a01-17-s1-dgx-01-c07:131322:132027 [0] NCCL INFO [Proxy Service] Device 1 CPU core 71
+a01-17-s1-dgx-01-c07:131322:132029 [0] NCCL INFO [Proxy Service UDS] Device 1 CPU core 2
+a01-17-s1-dgx-01-c07:131321:132030 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 3
+a01-17-s1-dgx-01-c07:131323:132031 [0] NCCL INFO [Proxy Service] Device 2 CPU core 125
+a01-17-s1-dgx-01-c07:131324:132032 [0] NCCL INFO [Proxy Service] Device 3 CPU core 93
+a01-17-s1-dgx-01-c07:131324:132033 [0] NCCL INFO [Proxy Service UDS] Device 3 CPU core 94
+a01-17-s1-dgx-01-c07:131323:132034 [0] NCCL INFO [Proxy Service UDS] Device 2 CPU core 126
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO 32 coll channels, 32 collnet channels, 24 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO 32 coll channels, 32 collnet channels, 24 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO 32 coll channels, 32 collnet channels, 24 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO 32 coll channels, 32 collnet channels, 24 nvls channels, 32 p2p channels, 32 p2p channels per peer
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO CC Off, workFifoBytes 1048576
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO ncclCommInitRankConfig comm 0xaaaaac5281a0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 1806000 commId 0xa5d22d250ce7fbc1 - Init COMPLETE
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 24.86 (kernels 23.70, alloc 0.04, bootstrap 0.40, allgathers 0.00, topo 0.36, graphs 0.01, connections 0.31, rest 0.03)
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO ncclCommInitRankConfig comm 0xaaaaac52fa30 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 806000 commId 0xa5d22d250ce7fbc1 - Init COMPLETE
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 24.86 (kernels 24.10, alloc 0.04, bootstrap 0.00, allgathers 0.00, topo 0.36, graphs 0.01, connections 0.31, rest 0.03)
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO ncclCommInitRankConfig comm 0xaaaaac521c90 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 906000 commId 0xa5d22d250ce7fbc1 - Init COMPLETE
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 24.86 (kernels 24.04, alloc 0.04, bootstrap 0.07, allgathers 0.00, topo 0.36, graphs 0.01, connections 0.31, rest 0.03)
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO ncclCommInitRankConfig comm 0xaaaaac528070 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 1906000 commId 0xa5d22d250ce7fbc1 - Init COMPLETE
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 24.86 (kernels 23.99, alloc 0.04, bootstrap 0.11, allgathers 0.00, topo 0.37, graphs 0.01, connections 0.31, rest 0.02)
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 00/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 01/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 00/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 00/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 02/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 01/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 01/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 00/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 03/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 02/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 04/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 02/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 03/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 01/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 05/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 03/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 04/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 02/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 04/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 06/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 03/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 05/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 07/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 05/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 04/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 06/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 05/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 08/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 07/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 06/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 08/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 09/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 06/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 07/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 07/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 10/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 08/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 09/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 08/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 10/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 11/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 09/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 09/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 11/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 10/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 12/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 10/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 11/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 13/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 12/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 11/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 14/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 12/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 13/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 12/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 13/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 14/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 15/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 13/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 14/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 15/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 14/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 16/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 15/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 16/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 15/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 17/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 16/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 17/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 18/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 16/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 17/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 17/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 18/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 19/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 18/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 18/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 19/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 20/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 19/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 20/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 19/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 21/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 20/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 21/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 20/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 22/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 22/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 21/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 23/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 21/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 22/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 23/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 24/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 22/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 24/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 25/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 23/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 23/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 26/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 25/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 24/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 27/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 24/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 26/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 25/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 25/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 28/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 27/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 29/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 26/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 26/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 28/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 30/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 29/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 27/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 27/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 31/1 : 0[0] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 30/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 28/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 28/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 31/1 : 1[1] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 29/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 29/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 30/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 30/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 31/1 : 2[2] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 31/1 : 3[3] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 00/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 00/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 01/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 01/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 02/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 02/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 03/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 04/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 03/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 00/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 00/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 04/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 01/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 05/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 01/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 02/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 05/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 06/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 02/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 03/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 06/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 04/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 03/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 07/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 07/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 05/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 04/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 08/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 08/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 09/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 06/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 05/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 10/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 07/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 06/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 09/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 11/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 10/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 08/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 12/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 07/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 13/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 09/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 11/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 08/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 12/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 10/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 09/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 14/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 13/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 11/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 10/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 15/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 14/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 11/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 12/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 16/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 15/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 16/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 12/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 17/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 13/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 17/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 18/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 13/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 19/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 14/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 14/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 18/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 20/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 19/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 15/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 15/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 16/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 21/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 16/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 20/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 17/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 22/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 17/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 21/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 18/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 23/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 22/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 18/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 19/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 23/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 24/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 19/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 25/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 24/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 20/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 25/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 26/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 20/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 21/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 26/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 21/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 27/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 22/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 27/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 23/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 22/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 28/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 28/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 23/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 29/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 29/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 24/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 24/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 30/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 30/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 25/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 25/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 31/1 : 1[1] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 31/1 : 0[0] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 26/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 26/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 27/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 27/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 28/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 28/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 29/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 29/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 30/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 30/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 31/1 : 3[3] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 31/1 : 2[2] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 00/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 01/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 02/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 00/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 00/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 03/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 01/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 01/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 04/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 02/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 00/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 02/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 05/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 03/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 01/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 04/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 06/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 03/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 05/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 07/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 02/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 04/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 06/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 08/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 03/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 05/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 09/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 07/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 04/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 06/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 08/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 10/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 05/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 07/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 09/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 06/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 11/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 10/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 08/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 07/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 11/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 12/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 09/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 13/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 12/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 08/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 13/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 14/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 10/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 09/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 14/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 11/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 15/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 10/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 12/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 15/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 16/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 11/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 17/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 16/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 13/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 12/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 18/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 17/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 13/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 14/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 19/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 18/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 20/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 14/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 21/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 19/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 15/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 20/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 22/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 15/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 16/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 21/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 23/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 16/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 17/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 22/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 17/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 18/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 24/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 23/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 24/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 18/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 19/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 25/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 25/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 19/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 20/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 26/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 26/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 21/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 20/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 27/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 22/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 27/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 21/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 23/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 28/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 28/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 22/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 29/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 29/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 24/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 30/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 30/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 23/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 25/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO Channel 31/1 : 0[0] -> 3[3] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO Channel 31/1 : 1[1] -> 0[0] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 26/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 24/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 27/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 28/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 25/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 26/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 29/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 27/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 30/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 28/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO Channel 31/1 : 2[2] -> 1[1] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 29/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 30/1 : 3[3] -> 2[2] via P2P/MNNVL
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO Channel 31/1 : 3[3] -> 2[2] via P2P/MNNVL
+           0             0     float    none      -1     0.27    0.00    0.00       0     0.23    0.00    0.00    N/A
+           0             0     float    none      -1     0.27    0.00    0.00       0     0.42    0.00    0.00    N/A
+           0             0     float    none      -1     0.39    0.00    0.00       0     0.39    0.00    0.00    N/A
+          64             4     float    none      -1    11.59    0.01    0.00       0    10.54    0.01    0.00    N/A
+         128             8     float    none      -1    10.70    0.01    0.01       0    10.73    0.01    0.01    N/A
+         256            16     float    none      -1    10.77    0.02    0.02       0    10.74    0.02    0.02    N/A
+         512            32     float    none      -1    11.05    0.05    0.03       0    10.93    0.05    0.04    N/A
+        1024            64     float    none      -1    10.77    0.10    0.07       0    10.85    0.09    0.07    N/A
+        2048           128     float    none      -1    11.15    0.18    0.14       0    10.79    0.19    0.14    N/A
+        4096           256     float    none      -1    10.77    0.38    0.29       0    10.96    0.37    0.28    N/A
+        8192           512     float    none      -1    10.93    0.75    0.56       0    10.94    0.75    0.56    N/A
+       16384          1024     float    none      -1    11.54    1.42    1.07       0    11.41    1.44    1.08    N/A
+       32768          2048     float    none      -1    12.26    2.67    2.01       0    12.22    2.68    2.01    N/A
+       65536          4096     float    none      -1    13.57    4.83    3.62       0    13.29    4.93    3.70    N/A
+      131072          8192     float    none      -1    15.79    8.30    6.22       0    15.64    8.38    6.28    N/A
+      262144         16384     float    none      -1    17.46   15.01   11.26       0    17.31   15.14   11.36    N/A
+      524288         32768     float    none      -1    17.99   29.14   21.86       0    18.29   28.67   21.50    N/A
+     1048576         65536     float    none      -1    18.43   56.90   42.67       0    18.55   56.51   42.39    N/A
+     2097152        131072     float    none      -1    19.65  106.70   80.03       0    18.72  112.03   84.02    N/A
+     4194304        262144     float    none      -1    23.29  180.07  135.05       0    23.19  180.83  135.62    N/A
+     8388608        524288     float    none      -1    32.15  260.93  195.70       0    31.66  264.92  198.69    N/A
+    16777216       1048576     float    none      -1    47.22  355.30  266.47       0    46.90  357.71  268.28    N/A
+    33554432       2097152     float    none      -1    72.65  461.86  346.39       0    72.39  463.52  347.64    N/A
+    67108864       4194304     float    none      -1   121.65  551.65  413.74       0   121.61  551.81  413.86    N/A
+   134217728       8388608     float    none      -1   219.47  611.54  458.66       0   217.93  615.86  461.90    N/A
+   268435456      16777216     float    none      -1   408.79  656.65  492.49       0   405.60  661.82  496.37    N/A
+   536870912      33554432     float    none      -1   785.36  683.60  512.70       0   776.82  691.11  518.33    N/A
+  1073741824      67108864     float    none      -1  1454.66  738.14  553.60       0  1492.31  719.51  539.64    N/A
+  2147483648     134217728     float    none      -1  2630.26  816.45  612.34       0  2463.92  871.57  653.68    N/A
+  4294967296     268435456     float    none      -1  5193.16  827.04  620.28       0  4867.31  882.41  661.81    N/A
+  8589934592     536870912     float    none      -1  10304.6  833.60  625.20       0  9599.30  894.85  671.14    N/A
+ 17179869184    1073741824     float    none      -1  20498.6  838.10  628.58       0  18959.2  906.15  679.61    N/A
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO comm 0xaaaaac52fa30 rank 0 nranks 4 cudaDev 0 busId 806000 - Destroy COMPLETE
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO comm 0xaaaaac521c90 rank 1 nranks 4 cudaDev 1 busId 906000 - Destroy COMPLETE
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 191.423 
+#
+# Collective test concluded: alltoall_perf_mpi
+#
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO comm 0xaaaaac528070 rank 3 nranks 4 cudaDev 3 busId 1906000 - Destroy COMPLETE
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO comm 0xaaaaac5281a0 rank 2 nranks 4 cudaDev 2 busId 1806000 - Destroy COMPLETE
+
+a01-17-s1-dgx-01-c07:131322:131322 [1] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+a01-17-s1-dgx-01-c07:131321:131321 [0] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+a01-17-s1-dgx-01-c07:131324:131324 [3] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+a01-17-s1-dgx-01-c07:131323:131323 [2] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+DONE

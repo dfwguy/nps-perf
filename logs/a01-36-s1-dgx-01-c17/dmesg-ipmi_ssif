@@ -1,0 +1,2 @@
+########INFO: Check dmesg - ipmi_ssif (Expected: No ipmi_ssif Not present errors)
+ipmitool mc info OK

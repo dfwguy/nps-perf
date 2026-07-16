@@ -1,0 +1,21 @@
+########INFO: Check Bond interfaces (Expected: all nodes the same)
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: 400000Mb/s
+/proc/net/bonding/*: Speed: 400000Mb/s
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Speed: Unknown!
+/proc/net/bonding/*: Link detected: yes
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: yes
+/proc/net/bonding/*: Link detected: yes
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: Link detected: no
+/proc/net/bonding/*: ==DETAILS==

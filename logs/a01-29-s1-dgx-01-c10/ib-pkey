@@ -1,0 +1,7 @@
+########INFO: Check IB PKEY (Expected: All nodes have the same PKEY)
+mlx5_0: 0xffff
+mlx5_1: 0xffff
+mlx5_2: 0xffff
+mlx5_3: 0xffff
+mlx5_4: 0xffff
+mlx5_5: 0xffff

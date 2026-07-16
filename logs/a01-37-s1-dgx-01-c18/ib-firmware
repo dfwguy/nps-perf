@@ -1,0 +1,7 @@
+########INFO: Check IB FW (Expected: All nodes have the same FW version)
+               /sys/class/infiniband/mlx5_0/fw_ver     40.47.2526
+               /sys/class/infiniband/mlx5_1/fw_ver     40.47.2526
+               /sys/class/infiniband/mlx5_2/fw_ver     40.47.2526
+               /sys/class/infiniband/mlx5_3/fw_ver     40.47.2526
+               /sys/class/infiniband/mlx5_4/fw_ver     32.47.1026
+               /sys/class/infiniband/mlx5_5/fw_ver     32.47.1026

@@ -1,0 +1,2 @@
+########INFO: Check Enroot runtime directory (Expected: ENROOT_RUNTIME_PATH Writable)
+/run/enroot/runtime/${SLURM_JOB_ID:-} is writable

@@ -1,0 +1,7 @@
+########INFO: Check IB devices status (Expected: All up and active)
+Infiniband device 'mlx5_0' port 1 status:		state:		 1: DOWN		phys state:	 3: Disabled
+Infiniband device 'mlx5_1' port 1 status:		state:		 1: DOWN		phys state:	 3: Disabled
+Infiniband device 'mlx5_2' port 1 status:		state:		 1: DOWN		phys state:	 3: Disabled
+Infiniband device 'mlx5_3' port 1 status:		state:		 1: DOWN		phys state:	 3: Disabled
+Infiniband device 'mlx5_4' port 1 status:		state:		 4: ACTIVE		phys state:	 5: LinkUp
+Infiniband device 'mlx5_5' port 1 status:		state:		 4: ACTIVE		phys state:	 5: LinkUp

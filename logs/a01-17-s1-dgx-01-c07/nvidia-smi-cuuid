@@ -1,0 +1,13 @@
+########INFO: Check CUUID (Expected: For GBXX, all nodes in the same rack have the same CUUID)
+        Bus Id                                         : 00000008:06:00.0
+        CliqueId                                       : 32766
+        ClusterUUID                                    : 4c202def-c57f-4908-b1e0-946278735266
+        Bus Id                                         : 00000009:06:00.0
+        CliqueId                                       : 32766
+        ClusterUUID                                    : 4c202def-c57f-4908-b1e0-946278735266
+        Bus Id                                         : 00000018:06:00.0
+        CliqueId                                       : 32766
+        ClusterUUID                                    : 4c202def-c57f-4908-b1e0-946278735266
+        Bus Id                                         : 00000019:06:00.0
+        CliqueId                                       : 32766
+        ClusterUUID                                    : 4c202def-c57f-4908-b1e0-946278735266
